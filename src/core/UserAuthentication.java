@@ -73,6 +73,7 @@ public class UserAuthentication {
 				// Sending the received InputStream to TicketParser to parse and populate the
 				// Ticket class.
 				parser.ticketDataParser(connection.getInputStream());
+
 			}
 
 		} catch (MalformedURLException e) {

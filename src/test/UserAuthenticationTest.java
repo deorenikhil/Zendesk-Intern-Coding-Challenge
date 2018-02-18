@@ -5,35 +5,34 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
 import org.junit.Test;
 
+import core.UserAuthentication;
+
 /**
- * @author niksMachine
- *
+ * 
+ * Testing the login method to call the GET Tickets API
+ * 
+ * @author Nikhil Deore
+ * @version 1.0
+ * @date 2018-02-16
  */
 public class UserAuthenticationTest {
 	@Test
+	public void loginWithWrongCredentialsTest() {
+		UserAuthentication authentication = new UserAuthentication();
+		authentication.setSubdomain("subdomain");
+		authentication.setUsername("email");
+		authentication.setPassword("password");
+		assertEquals(false, authentication.login());
+	}
+
+	@Test
 	public void loginTest() {
-
-		Properties prop = new Properties();
-		InputStream input = null;
-		try {
-			input = new FileInputStream(".././test.resources/config.properties");
-
-			prop.load(input);
-			System.out.println(prop.getProperty("subdomain"));
-			assertEquals(10, 10);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		// input = new FileInputStream("config.properties");
-
+		UserAuthentication authentication = new UserAuthentication();
+		authentication.setSubdomain("subdomain");
+		authentication.setUsername("email");
+		authentication.setPassword("password");
+		assertEquals(false, authentication.login());
 	}
 }
