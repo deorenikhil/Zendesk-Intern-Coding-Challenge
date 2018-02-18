@@ -23,7 +23,7 @@ A Java Application to View Zendesks Tickets on Console.
  
 * Following is the snapshot of the console output
 	 
-	 ```Welcome to Ticket Viewer Application
+	 Welcome to Ticket Viewer Application
 
  Please Enter Subdomain : subdomain
 
