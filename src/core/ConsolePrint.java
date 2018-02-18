@@ -1,5 +1,7 @@
 package core;
 
+import java.util.ArrayList;
+
 import model.Ticket;
 
 public class ConsolePrint {
@@ -26,8 +28,8 @@ public class ConsolePrint {
 	}
 
 	public void displayTicketHeader() {
-		System.out.format("\n%-4s| %-50s | %-4s | %s", "ID", "SUBJECT", "STATUS", "GROUP ID");
-		System.out.println("\n--------------------------------------------------------------------------------");
+		System.out.format("\n%-4s| %-50s | %-4s | %-12s | %-10s | %-10s | %-30s", "ID", "SUBJECT", "STATUS", "GROUP ID", "PRIORITY", "TYPE", "TAGS");
+		System.out.println("\n------------------------------------------------------------------------------------------------------------------------");
 	}
 
 	public void displayTicket(Ticket ticket) {
@@ -36,7 +38,10 @@ public class ConsolePrint {
 		String subject = ticket.getSubject();
 		String status = ticket.getStatus().toUpperCase();
 		long groupId = ticket.getGroup_id();
-		System.out.format("%-4d| %-50s |  %-5s | %d\n", id, subject, status, groupId);
+		String priority = ticket.getPriority();
+		String type = ticket.getType();
+		ArrayList<String> tags = ticket.getTags();
+		System.out.format("%-4d| %-50s |  %-5s | %d | %-10s | %-10s | %-50s\n", id, subject, status, groupId, priority, type, tags);
 	}
 
 	public void displayMessageForIdInput() {
